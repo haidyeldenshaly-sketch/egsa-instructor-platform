@@ -1,0 +1,292 @@
+/* =========================================================
+   EGSA Instructor Portal — Minimal, Elegant Login Styles
+   ========================================================= */
+
+.wrap {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  background-color: #f8fafb;
+}
+
+@media (max-width: 900px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------------------------------------------------------------
+   Left Visual Section — Aerospace Identity
+   ------------------------------------------------------------- */
+.hero {
+  position: relative;
+  background: radial-gradient(120% 90% at 20% 15%, #183448 0%, #142a3a 45%, #0e1a22 100%);
+  color: #cfdbe2;
+  padding: 3.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-inline-end: 1px solid rgba(226, 232, 240, 0.1);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 2.5rem 1.75rem;
+    min-height: 240px;
+  }
+}
+
+/* Subtle scientific background elements */
+.ambientPattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.orbitalRing {
+  position: absolute;
+  bottom: -15%;
+  inset-inline-end: -10%;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  border: 1px dashed rgba(212, 184, 124, 0.18);
+  pointer-events: none;
+}
+
+.orbitalRing::after {
+  content: '';
+  position: absolute;
+  inset: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(30, 124, 133, 0.15);
+}
+
+.brandCenter {
+  position: relative;
+  z-index: 2;
+  margin: auto 0;
+}
+
+.logoPlate {
+  display: inline-block;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(212, 184, 124, 0.3);
+  margin-bottom: 1.5rem;
+  transition: transform 250ms ease;
+}
+
+.logoPlate:hover {
+  transform: scale(1.02);
+}
+
+.agencyTitle {
+  font-size: 1.5rem;
+  font-weight: 750;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+  font-family: var(--font-heading, inherit);
+}
+
+.academySubtitle {
+  font-size: 0.92rem;
+  color: var(--egsa-accent, #d4b87c);
+  font-family: var(--font-mono, monospace);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 0.35rem;
+  font-weight: 600;
+}
+
+[dir="rtl"] .academySubtitle {
+  letter-spacing: 0;
+  font-family: var(--font-sans, inherit);
+}
+
+.visualFooter {
+  position: relative;
+  z-index: 2;
+  font-size: 0.78rem;
+  color: #7b96a6;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.statusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+/* -------------------------------------------------------------
+   Right Form Section — Clean, Focused Authentication
+   ------------------------------------------------------------- */
+.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  position: relative;
+  background-color: #f8fafb;
+}
+
+@media (max-width: 600px) {
+  .panel {
+    padding: 2rem 1.25rem;
+  }
+}
+
+.formCard {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 4px 20px -2px rgba(14, 26, 34, 0.05);
+}
+
+.topBar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.25rem;
+}
+
+.langBtn {
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 150ms ease;
+}
+
+.langBtn:hover {
+  background: #f1f5f9;
+  color: #0e1a22;
+  border-color: #cbd5e1;
+}
+
+.formHeader {
+  margin-bottom: 1.75rem;
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 750;
+  color: #0e1a22;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.formSubtitle {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0.35rem 0 0;
+  line-height: 1.4;
+}
+
+/* Input group with clean interior icons */
+.inputGroupWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  inset-inline-start: 0.95rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.controlWithIcon {
+  padding-inline-start: 2.45rem !important;
+  padding-inline-end: 2.5rem !important;
+  height: 44px;
+  border-radius: 8px !important;
+  border: 1px solid #e2e8f0 !important;
+  font-size: 0.9rem !important;
+  color: #0e1a22 !important;
+  background-color: #ffffff !important;
+  transition: all 150ms ease !important;
+}
+
+.controlWithIcon:focus {
+  border-color: #1e7c85 !important;
+  box-shadow: 0 0 0 3px rgba(30, 124, 133, 0.12) !important;
+  outline: none !important;
+}
+
+.togglePassBtn {
+  position: absolute;
+  inset-inline-end: 0.65rem;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 150ms ease;
+  z-index: 3;
+}
+
+.togglePassBtn:hover {
+  color: #0e1a22;
+}
+
+.submitBtn {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #142a3a;
+  border: 1px solid #142a3a;
+  color: #ffffff;
+  transition: all 150ms ease;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #0e1a22;
+  border-color: #0e1a22;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(14, 26, 34, 0.15);
+}
+
+.formFooter {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #94a3b8;
+}

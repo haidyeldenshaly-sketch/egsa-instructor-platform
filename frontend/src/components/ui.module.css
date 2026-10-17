@@ -1,0 +1,664 @@
+/* =========================================================
+   EGSA Instructor Portal — Premium UI Components Styles
+   ========================================================= */
+
+/* -------------------------------------------------------------
+   Page Header
+   ------------------------------------------------------------- */
+.pageHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--egsa-border);
+  position: relative;
+}
+
+.pageHeader::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: -1px;
+  width: 72px;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--egsa-accent), var(--egsa-secondary));
+  border-radius: var(--r-full);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--egsa-secondary);
+  font-weight: 600;
+  margin-bottom: var(--sp-1);
+}
+
+[dir="rtl"] .eyebrow {
+  letter-spacing: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--fs-xl);
+  font-weight: 750;
+  color: var(--egsa-dark);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--egsa-muted);
+  font-size: var(--fs-sm);
+  max-width: 72ch;
+  line-height: 1.5;
+}
+
+/* -------------------------------------------------------------
+   Panels / Cards
+   ------------------------------------------------------------- */
+.card {
+  background: var(--egsa-surface);
+  border: 1px solid var(--egsa-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-1);
+  transition: box-shadow var(--dur-norm) var(--ease), border-color var(--dur-norm) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: #cbd5e1;
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--egsa-border-soft);
+  min-height: 54px;
+  background-color: #fafbfc;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--egsa-navy);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[dir="rtl"] .cardTitle {
+  letter-spacing: 0;
+  font-size: var(--fs-md);
+  text-transform: none;
+}
+
+.cardBody {
+  padding: 1.25rem;
+}
+
+.cardBodyFlush {
+  padding: 0;
+}
+
+/* -------------------------------------------------------------
+   Aerospace Stat Cards
+   ------------------------------------------------------------- */
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1.15rem 1.25rem;
+  background: var(--egsa-surface);
+  border: 1px solid var(--egsa-border);
+  border-inline-start: 4px solid var(--tone, var(--egsa-primary));
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-1);
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--dur-norm) var(--ease), box-shadow var(--dur-norm) var(--ease), border-color var(--dur-norm) var(--ease);
+}
+
+a.stat:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sh-2);
+  border-color: #cbd5e1;
+  color: inherit;
+}
+
+a.stat:active {
+  transform: translateY(-1px);
+}
+
+.statIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--r-md);
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--tone, var(--egsa-primary)) 12%, white);
+  color: var(--tone, var(--egsa-primary));
+  font-size: 1.25rem;
+  flex: none;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tone, var(--egsa-primary)) 25%, transparent);
+}
+
+.statContent {
+  min-width: 0;
+}
+
+.statValue {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--egsa-dark);
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--egsa-muted);
+  margin-top: 0.35rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* -------------------------------------------------------------
+   Status Badges
+   ------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.74rem;
+  font-weight: 650;
+  border-radius: var(--r-full);
+  border: 1px solid;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.tone-ok {
+  color: #0f766e;
+  border-color: #99f6e4;
+  background: #f0fdfa;
+}
+
+.tone-info {
+  color: #0369a1;
+  border-color: #bae6fd;
+  background: #f0f9ff;
+}
+
+.tone-warn {
+  color: #b45309;
+  border-color: #fde68a;
+  background: #fffbeb;
+}
+
+.tone-danger {
+  color: #b91c1c;
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+.tone-muted {
+  color: #475569;
+  border-color: #e2e8f0;
+  background: #f8fafc;
+}
+
+/* -------------------------------------------------------------
+   Empty and Error State Views
+   ------------------------------------------------------------- */
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--sp-3);
+  padding: 3.5rem 1.5rem;
+  color: var(--egsa-muted);
+}
+
+.stateIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  color: var(--egsa-primary);
+  background: #f1f5f9;
+  border: 1px solid var(--egsa-border);
+  box-shadow: var(--sh-1);
+}
+
+.stateError .stateIcon {
+  color: var(--egsa-danger);
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.stateText {
+  max-width: 48ch;
+  font-size: var(--fs-md);
+  line-height: 1.5;
+}
+
+/* -------------------------------------------------------------
+   Skeleton Loading State
+   ------------------------------------------------------------- */
+.skel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.skelRow {
+  height: 16px;
+  border-radius: var(--r-sm);
+  background: linear-gradient(90deg, #edf2f7 25%, #f7fafc 50%, #edf2f7 75%);
+  background-size: 200% 100%;
+  animation: egsa-shimmer 1.5s linear infinite;
+}
+
+/* -------------------------------------------------------------
+   Avatar Component
+   ------------------------------------------------------------- */
+.avatarWrap {
+  position: relative;
+  display: inline-block;
+  flex: none;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background-color: var(--egsa-navy);
+  border: 2px solid #ffffff;
+  box-shadow: var(--sh-1);
+}
+
+.avatarInitials {
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--egsa-navy) 0%, #1c3c54 100%);
+  color: var(--egsa-accent);
+  font-weight: 700;
+  border: 2px solid #ffffff;
+  box-shadow: var(--sh-1);
+  text-transform: uppercase;
+}
+
+.avatarOnline {
+  position: absolute;
+  bottom: 0;
+  inset-inline-end: 0;
+  width: 10px;
+  height: 10px;
+  background-color: var(--egsa-success);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+/* -------------------------------------------------------------
+   File Attachment Cards & Previews
+   ------------------------------------------------------------- */
+.fileCard {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+  border: 1px solid var(--egsa-border);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-1);
+  transition: all var(--dur-norm) var(--ease);
+}
+
+.fileCard:hover {
+  border-color: #cbd5e1;
+  box-shadow: var(--sh-2);
+}
+
+.fileIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-sm);
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  flex: none;
+}
+
+.fileIconPdf { background: #fee2e2; color: #dc2626; }
+.fileIconWord { background: #dbeafe; color: #2563eb; }
+.fileIconZip { background: #fef3c7; color: #d97706; }
+.fileIconImg { background: #e0e7ff; color: #4f46e5; }
+.fileIconOther { background: #f1f5f9; color: #64748b; }
+
+.fileInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.fileName {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  color: var(--egsa-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fileMeta {
+  font-size: var(--fs-xs);
+  color: var(--egsa-muted);
+}
+
+.fileActions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: none;
+}
+
+/* Drag-and-drop file upload area */
+.dropZone {
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--r-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background-color: #f8fafc;
+  cursor: pointer;
+  transition: all var(--dur-norm) var(--ease);
+}
+
+.dropZone:hover, .dropZoneActive {
+  border-color: var(--egsa-secondary);
+  background-color: rgba(30, 124, 133, 0.04);
+}
+
+.dropZoneIcon {
+  font-size: 2.25rem;
+  color: var(--egsa-primary);
+  margin-bottom: 0.75rem;
+}
+
+.dropZoneText {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--egsa-navy);
+  margin-bottom: 0.25rem;
+}
+
+.dropZoneSub {
+  font-size: var(--fs-xs);
+  color: var(--egsa-muted);
+}
+
+/* -------------------------------------------------------------
+   Attendance Bar & Timeline
+   ------------------------------------------------------------- */
+.bar {
+  display: flex;
+  height: 8px;
+  border-radius: var(--r-full);
+  overflow: hidden;
+  background: #e2e8f0;
+  min-width: 90px;
+}
+
+.barP {
+  background: var(--egsa-secondary);
+  transition: width var(--dur-slow) var(--ease);
+}
+
+.barLate {
+  background: #f59e0b;
+  transition: width var(--dur-slow) var(--ease);
+}
+
+.barExcused {
+  background: #0284c7;
+  transition: width var(--dur-slow) var(--ease);
+}
+
+.barA {
+  background: var(--egsa-danger);
+  transition: width var(--dur-slow) var(--ease);
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.65rem 1.5rem;
+  margin: 0;
+}
+
+.kv dt {
+  color: var(--egsa-muted);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+}
+
+.kv dd {
+  margin: 0;
+  color: var(--egsa-text);
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline li {
+  position: relative;
+  padding-block: 0.75rem;
+  padding-inline: 1.75rem 0;
+}
+
+.timeline li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 1.15rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--egsa-accent);
+  box-shadow: 0 0 0 3px rgba(212, 184, 124, 0.25);
+}
+
+.timeline li::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 4px;
+  top: 1.8rem;
+  bottom: -0.75rem;
+  width: 1px;
+  background: var(--egsa-border);
+}
+
+.timeline li:last-child::after {
+  display: none;
+}
+
+.banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 0.95rem 1.25rem;
+  margin-bottom: var(--sp-5);
+  border: 1px solid #fde68a;
+  border-inline-start: 4px solid var(--egsa-accent);
+  background: linear-gradient(90deg, #fffbeb 0%, #ffffff 100%);
+  border-radius: var(--r-md);
+  color: #78350f;
+  box-shadow: var(--sh-1);
+}
+
+.banner i {
+  color: var(--egsa-accent-strong);
+  font-size: 1.15rem;
+}
+
+/* Segmented Attendance Controls */
+.segment {
+  display: inline-flex;
+  align-items: center;
+  background: #f1f5f9;
+  border-radius: var(--r-md);
+  padding: 3px;
+  border: 1px solid var(--egsa-border);
+  gap: 2px;
+}
+
+.segment button {
+  border: none;
+  background: transparent;
+  padding: 0.35rem 0.75rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  border-radius: var(--r-sm);
+  color: var(--egsa-muted);
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease);
+}
+
+.segment button:hover {
+  color: var(--egsa-dark);
+}
+
+.sPresent[aria-pressed="true"] {
+  background: var(--egsa-secondary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(30, 124, 133, 0.35);
+}
+
+.sAbsent[aria-pressed="true"] {
+  background: var(--egsa-danger) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.35);
+}
+
+.sPending[aria-pressed="true"] {
+  background: var(--egsa-navy) !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(20, 42, 58, 0.35);
+}
+
+/* Tabs */
+.tabs {
+  border-bottom: 2px solid var(--egsa-border);
+  gap: 0.25rem;
+}
+
+.tabs :global(.nav-link) {
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--egsa-muted);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  padding: 0.65rem 1.15rem;
+  border-radius: 0;
+  transition: all var(--dur-fast) var(--ease);
+}
+
+.tabs :global(.nav-link:hover) {
+  color: var(--egsa-dark);
+  border-color: #cbd5e1;
+}
+
+.tabs :global(.nav-link.active) {
+  color: var(--egsa-primary) !important;
+  border-bottom: 2px solid var(--egsa-accent) !important;
+  background: transparent !important;
+  font-weight: 700;
+}
+
+/* Drag and Drop Zone */
+.dropZone {
+  border: 2px dashed var(--egsa-border);
+  border-radius: var(--r-lg);
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  background: #fafbfc;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease);
+  position: relative;
+}
+
+.dropZone:hover,
+.dropZoneActive {
+  border-color: var(--egsa-secondary);
+  background: rgba(30, 124, 133, 0.04);
+}
+
+.dropZoneIcon {
+  font-size: 2.25rem;
+  color: var(--egsa-muted);
+  margin-bottom: 0.75rem;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.dropZone:hover .dropZoneIcon {
+  transform: translateY(-2px);
+  color: var(--egsa-secondary);
+}
+
+.dropZoneText {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--egsa-dark);
+  margin-bottom: 0.25rem;
+}
+
+.dropZoneSub {
+  font-size: var(--fs-xs);
+  color: var(--egsa-muted);
+}
+
