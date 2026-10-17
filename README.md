@@ -86,3 +86,4 @@ See `INTEGRATION_CONTRACT.md` (IDs, auth, payloads, endpoints required later, un
 - Dynamic activity-log sentences are generated in English; user-entered content is shown as entered.
 - Refresh tokens live in `localStorage` (XSS trade-off); move to httpOnly cookies behind the same origin for production.
 - No file upload handling (attachments are URL references).
+"# egsa-instructor-v2" 
